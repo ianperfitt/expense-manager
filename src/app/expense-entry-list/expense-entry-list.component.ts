@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ExpenseEntry } from '../expense-entry';
+import { DebugService } from '../debug.service';
 
 @Component({
   selector: 'app-expense-entry-list',
   templateUrl: './expense-entry-list.component.html',
-  styleUrls: ['./expense-entry-list.component.css']
+  styleUrls: ['./expense-entry-list.component.css'],
+  providers: [DebugService] 
 })
 export class ExpenseEntryListComponent implements OnInit{
 
   title!: string;
   expenseEntries: ExpenseEntry[] = [];
-  constructor() {}
+
+  constructor(private debugService: DebugService) { } 
+
   ngOnInit(): void {
-    this.title = "Expense Entry List";
-    this.expenseEntries = this.getExpenseEntries();
+    this.debugService.info("Expense Entry List component initialized"); 
+      this.title = "Expense Entry List"; 
+      this.expenseEntries = this.getExpenseEntries(); 
   }
 
 
