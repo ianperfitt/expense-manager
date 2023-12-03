@@ -13,7 +13,7 @@ export class ExpenseEntryListComponent implements OnInit{
 
   title!: string;
   expenseEntries: ExpenseEntry[] = [];
-  displayedColumns: string[] = ['item', 'amount', 'category', 'location', 'spendOn' ];
+  displayedColumns: string[] = ['item', 'amount', 'category', 'location', 'spendOn', 'view' ];
 
   constructor(private debugService: DebugService, private restService: ExpenseEntryService) { } 
 
